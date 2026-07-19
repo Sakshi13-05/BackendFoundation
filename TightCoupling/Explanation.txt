@@ -1,0 +1,71 @@
+ ================================================================================
+Explanation of Tight Coupling Demo
+================================================================================
+
+1. Class Dependencies (Who depends on whom?)
+--------------------------------------------------------------------------------
+- Main.java depends on OrderService.java:
+  In Main.java, a new instance of OrderService is created directly using the 'new' keyword:
+  OrderService service = new OrderService();
+  
+- OrderService.java depends on EmailNotification.java:
+  In OrderService.java, OrderService directly instantiates EmailNotification:
+  EmailNotification notify = new EmailNotification();
+  This creates a hardcoded dependency from OrderService to the concrete EmailNotification class.
+
+2. Dependency Disadvantages (What makes this bad?)
+--------------------------------------------------------------------------------
+- Lack of Flexibility & Hard to Extend:
+  If you want to switch the notification system from Email to SMS (e.g. using the 
+  SMSNotifiaction class), you must open and modify the source code of OrderService.java.
+  A class should not need to change its internal code just to swap a supporting service.
+
+- Difficult to Test (Mocking is Hard):
+  Because OrderService instantiates EmailNotification internally, you cannot easily 
+  isolate OrderService for unit testing. You cannot mock the notify object, meaning 
+  a unit test for placeOrder() would always trigger a real EmailNotification.
+
+- Tight Lifecycle Integration:
+  OrderService controls the lifecycle of EmailNotification. If EmailNotification's 
+  constructor changes (e.g., if it requires initialization settings, ports, or credentials), 
+  OrderService's instantiation code must also be modified, violating modular design.
+
+3. Design Principles Affected
+--------------------------------------------------------------------------------
+- Dependency Inversion Principle (DIP):
+  "High-level modules should not depend on low-level modules. Both should depend 
+  on abstractions."
+  Here, the high-level class (OrderService) directly depends on a low-level concrete 
+  class (EmailNotification) rather than an abstraction (like a Notification interface).
+
+- Open/Closed Principle (OCP):
+  "Software entities should be open for extension, but closed for modification."
+  If we want to introduce new notification types (e.g., SMSNotifiaction, Push, WhatsApp), 
+  we are forced to modify the code inside OrderService to instantiate the new class.
+
+- Single Responsibility Principle (SRP):
+  OrderService is responsible for managing the order placement flow AND managing 
+  the lifecycle/instantiation of its dependencies (creating EmailNotification).
+  
+================================================================================
+How to resolve this (Loose Coupling)
+================================================================================
+To decouple these classes:
+1. Define a common interface, e.g., 'NotificationSender' or 'NotificationService',
+   containing a 'sendNotification()' method.
+2. Make both EmailNotification and SMSNotifiaction implement this interface.
+3. Inject the interface into OrderService (via Constructor Injection or Setter Injection), 
+   instead of having OrderService instantiate it directly:
+   
+   public class OrderService {
+       private final NotificationSender notificationSender;
+       
+       public OrderService(NotificationSender notificationSender) {
+           this.notificationSender = notificationSender;
+       }
+       
+       public void placeOrder() {
+           System.out.println("Your order has been placed");
+           notificationSender.sendNotification();
+       }
+   }
