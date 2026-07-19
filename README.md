@@ -30,7 +30,7 @@ Follow these steps to run the project on your local machine:
 
 1. **Clone the repository:**
    ```bash
-   git clone <YOUR_GITHUB_REPOSITORY_LINK>
+   git clone https://github.com/Sakshi13-05/BackendFoundation.git
 
 2. **Navigate to the correct folder:**
    ```bash
@@ -38,10 +38,24 @@ Follow these steps to run the project on your local machine:
 
 3. **Install all necessary packages:**
    ```bash
-  npm install express swagger-ui-express
+   npm install express swagger-ui-express
 
-3. **Start the API server**
+4. **Start the API server**
    ```bash
-  node server.js
+   node server.js
 
-  
+## 🧪 Testing with curl (Proof of Logic)
+
+To verify the endpoints, run these commands in your terminal:
+
+1. **Create a task::**
+   ```bash
+   curl -i -X POST http://localhost:3000/user-task -H "Content-Type: application/json" -d "          {\"title\":\"Learn Backend Logic\"}"
+
+2. **Update a task (Example task ID 2):**
+   ```bash
+   curl -i -X PUT http://localhost:3000/modified-task/2 -H "Content-Type: application/json" -d "{\"done\": true}"
+
+3. **Delete a task::**
+   ```bash
+   curl -i -X DELETE http://localhost:3000/task/1
