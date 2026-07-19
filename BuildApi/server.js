@@ -57,6 +57,31 @@ app.post('/user-task', (req, res) => {
     }
 })
 
+app.delete('/task/:id', (req, res) => {
+    const taskID = req.params.id;
+    const tid = tasks.findIndex(t => t.id === parseInt(taskID))
+    if (tid != -1) {
+        tasks.splice(tid, 1);
+        res.status(204).send();
+    } else {
+        res.status(404).json({ error: "Not Found" });
+    }
+})
+
+app.put('/modified-task/:id', (req, res) => {
+    const taskID = req.params.id;
+    const tid = tasks.findIndex(t => t.id === parseInt(taskID))
+
+    if (tid != -1) {
+        const { title, done } = req.body;
+        if (title !== undefined) tasks[tid].title = title;
+        if (done !== undefined) tasks[tid].done = done;
+        res.json(tasks);
+    } else {
+        res.status(404).json({ error: "Not Found" });
+    }
+})
+
 // Bind and listen for connections on the specified port
 app.listen(PORT, () => {
     console.log(`Server is operating live at http://localhost:${PORT}`);
