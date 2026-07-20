@@ -1,0 +1,62 @@
+================================================================================
+Explanation of Loose Coupling - Version 2 (Dependency Injection / Constructor Injection)
+================================================================================
+
+1. Implementation Details (What was changed?)
+--------------------------------------------------------------------------------
+In this version (v2), we have achieved complete loose coupling by implementing 
+Dependency Injection (DI) via Constructor Injection.
+
+- Dependency Injection in OrderService.java:
+  We removed the instantiation of the concrete class from inside OrderService:
+  // Decoupled declaration
+  NotificationService notify;
+
+  Instead, we receive the implementation as a parameter in the constructor:
+  public OrderService(NotificationService notify) {
+      this.notify = notify;
+  }
+
+- Client-Side Instantiation in Main.java:
+  The client (Main.java) is now responsible for deciding which implementation of 
+  NotificationService to use, instantiating it, and passing it to OrderService:
+  OrderService service = new OrderService(new EmailNotification());
+  
+  Or if we wanted to use SMS, we would simply change it in Main:
+  OrderService service = new OrderService(new SMSNotifiaction());
+
+2. Advantages of Version 2 (Full Decoupling)
+--------------------------------------------------------------------------------
+- Complete Flexibility & Extensibility:
+  If we want to switch the notification system from Email to SMS, or add a completely 
+  new one (e.g. PushNotification), we do NOT need to modify the OrderService.java 
+  class. OrderService is now completely decoupled from any concrete notification classes.
+
+- Highly Testable (Easy to Mock):
+  During unit testing, we can easily create a mock implementation of 
+  NotificationService and pass it to the OrderService constructor. This lets us 
+  test the placeOrder() method in isolation without triggering real emails/SMS.
+
+- Decoupled Lifecycle:
+  OrderService no longer controls the lifecycle of the notification object. If 
+  EmailNotification requires connection parameters, credentials, or complex setup 
+  in the future, those details are handled outside of OrderService.
+
+3. Design Principles Adhered To
+--------------------------------------------------------------------------------
+- Dependency Inversion Principle (DIP):
+  "High-level modules should not depend on low-level modules. Both should depend 
+  on abstractions."
+  OrderService (high-level) only references the NotificationService interface 
+  (abstraction) and receives its implementation from outside. It has zero compile-time 
+  dependency on concrete classes EmailNotification or SMSNotifiaction.
+
+- Open/Closed Principle (OCP):
+  "Software entities should be open for extension, but closed for modification."
+  OrderService is open to support any number of notification implementations 
+  (extension) but closed for modification (we never have to touch its source 
+  code to swap them).
+
+- Single Responsibility Principle (SRP):
+  OrderService now has a single responsibility: placing the order. It is no longer 
+  burdened with the responsibility of creating or configuring its dependencies.
