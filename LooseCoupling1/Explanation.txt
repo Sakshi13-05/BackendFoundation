@@ -1,0 +1,85 @@
+================================================================================
+Explanation of Loose Coupling - Version 1 (Interface-Based Design)
+================================================================================
+
+1. Implementation Details (What was changed?)
+--------------------------------------------------------------------------------
+In this version (v1), we transitioned from Tight Coupling towards Loose Coupling 
+by introducing an interface design.
+
+- Created the NotificationService Interface (NotificationService.java):
+  Defined a common contract for sending notifications:
+  public interface NotificationService {
+      void sendNotification();
+  }
+
+- Implemented the Interface in Concrete Classes:
+  Both EmailNotification.java and SMSNotifiaction.java now implement the 
+  NotificationService interface:
+  public class EmailNotification implements NotificationService { ... }
+  public class SMSNotifiaction implements NotificationService { ... }
+
+- Programmed to an Interface in OrderService.java:
+  Instead of declaring variables with concrete types, OrderService now uses the 
+  interface type:
+  NotificationService notify = new SMSNotifiaction();
+
+  And inside placeOrder(), the notification is triggered via the interface method:
+  notify.sendNotification();
+
+2. Improvements Over Tight Coupling (Why is this better?)
+--------------------------------------------------------------------------------
+- Separation of Contract and Implementation:
+  OrderService is no longer tightly bound to the internal details of how a 
+  notification is sent. It only knows that whatever object is held by the 
+  'notify' variable has a sendNotification() method.
+
+- Polymorphism:
+  The notify variable can hold any object that implements NotificationService. 
+  The JVM decides at runtime which implementation's sendNotification() method 
+  to execute.
+
+3. Remaining Limitations (Why is this only "V1" / Partially Coupled?)
+--------------------------------------------------------------------------------
+While we are programming to an interface, OrderService is still not fully decoupled 
+from the concrete notification classes:
+
+- Hardcoded Instantiation:
+  OrderService still directly instantiates the concrete class:
+  NotificationService notify = new SMSNotifiaction();
+  
+- Modification is Still Required to Switch Implementations:
+  If we want to switch from SMS notifications to Email notifications, we must 
+  still modify the source code of OrderService.java (e.g. changing 'new SMSNotifiaction()' 
+  to 'new EmailNotification()').
+  
+- Violates Design Principles:
+  - Open/Closed Principle (OCP): We cannot switch notifications without modifying 
+    OrderService.
+  - Dependency Inversion Principle (DIP): Even though we reference the interface, 
+    OrderService still depends on the low-level concrete class SMSNotifiaction 
+    for instantiation.
+
+4. How to Achieve Complete Loose Coupling (Towards Version 2)
+--------------------------------------------------------------------------------
+To completely decouple OrderService, we need to remove the responsibility of 
+creating the NotificationService instance from OrderService itself. 
+
+This is achieved using Dependency Injection (DI) via the constructor:
+
+public class OrderService {
+    private final NotificationService notify;
+
+    // Inject the dependency from the outside
+    public OrderService(NotificationService notify) {
+        this.notify = notify;
+    }
+
+    public void placeOrder() {
+        System.out.println("Your order has been placed");
+        notify.sendNotification();
+    }
+}
+
+This way, the client/caller (e.g., Main.java) decides which implementation to 
+pass in, and OrderService remains completely generic and unchanged.
