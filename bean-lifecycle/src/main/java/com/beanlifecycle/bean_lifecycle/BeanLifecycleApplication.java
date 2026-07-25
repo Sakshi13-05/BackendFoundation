@@ -12,8 +12,8 @@ public class BeanLifecycleApplication {
 		// creation of ioc container
 		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		// reflection brings the metadata
-		OrderService order = context.getBean(OrderService.class);
-		order.placeOrder();
+		// OrderService order = context.getBean(OrderService.class);
+		// order.placeOrder();
 
 	}
 }
