@@ -15,5 +15,8 @@ public class BeanLifecycleApplication {
 		// OrderService order = context.getBean(OrderService.class);
 		// order.placeOrder();
 
+		// CartService cart = context.getBean(CartService.class);
+		// cart.addToCart();
+
 	}
 }
