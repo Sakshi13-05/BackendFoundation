@@ -2,7 +2,11 @@ package com.beanlifecycle.bean_lifecycle;
 
 import java.util.HashMap;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import jakarta.annotation.PostConstruct;
@@ -12,8 +16,8 @@ import jakarta.annotation.PostConstruct;
 // 1.object creation 
 // 2.callback will come to addPro[peerties]
 // method1
-// @Component
-public class CartService /* implements InitializingBean */ {
+@Component
+public class CartService implements BeanNameAware, ApplicationContextAware/* implements InitializingBean */ {
     HashMap<Integer, String> map;
 
     public CartService() {
@@ -22,15 +26,16 @@ public class CartService /* implements InitializingBean */ {
         System.out.println("cart service constr called");
     }
 
-    public void addToCart() {
-        System.out.println("Added to Cart");
-
+    @Override
+    public void setBeanName(String name) {
+        // TODO Auto-generated method stub
+        System.out.println("sakshi is grt");
     }
 
-    public void start() {
-        map.put(1, "shampoo");
-        System.out.println(map);
-
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        // TODO Auto-generated method stub
+        System.out.println("sakshi is dev");
     }
 
     @PostConstruct
@@ -38,6 +43,18 @@ public class CartService /* implements InitializingBean */ {
         System.out.println("demo of postconstruct");
     }
 
+    public void addToCart() {
+        System.out.println("Added to Cart");
+    }
+
+    // this is for init method
+    // public void start() {
+    // map.put(1, "shampoo");
+    // System.out.println(map);
+
+    // }
+
+    // this is for initizalingBean
     // @Override
     // public void afterPropertiesSet() throws Exception {
     // map.put(1, "shampoo");
