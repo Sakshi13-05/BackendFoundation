@@ -1,5 +1,6 @@
 package BackendFoundation.DependencyInjection.dependencyInjection;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.annotation.Order;
@@ -10,6 +11,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class DependencyInjectionApplication {
+
+	private final BackendFoundation.DependencyInjection.dependencyInjection.service.GPayService GPayService;
+
+	DependencyInjectionApplication(
+			BackendFoundation.DependencyInjection.dependencyInjection.service.GPayService GPayService) {
+		this.GPayService = GPayService;
+	}
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class, args);
