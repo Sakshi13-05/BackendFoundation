@@ -15,8 +15,7 @@ I am building this out day by day. Click on any topic to read the notes and see 
 | Day | Topic | Link |
 | :---: | :--- | :--- |
 | **01** | Introduction to Multithreading  | [👉 Read Notes](./Day-01-Multithreading/README.md) |
-| **02** | *(Coming Soon)* | *(Coming Soon)* |
-| **03** | *(Coming Soon)* | *(Coming Soon)* |
+
 
 *(Note: I will be updating this index regularly as I upload more topics!)*
 
