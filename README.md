@@ -1,61 +1,41 @@
-# 🚀 Build your first CRUD API - To-Do List
+# ☕ Backend Foundation: Core Java Internals
 
-This is my first professional Backend CRUD API built during the FlyRank Backend Foundation program. I built this to master the request-response loop and handle data operations logic manually.
+Hi there! 👋 
 
-## 📌 Project Overview
-This project manages a to-do list in-memory. It demonstrates the ability to Create, Read, Update, and Delete tasks while following strictly defined API specifications.
+Welcome to my **Backend Foundation** repository! I believe that mastering backend development requires more than just knowing how to write code—it requires understanding exactly what happens **under the hood**. 
 
-## 🛠️ Tech Stack
-- **Language:** JavaScript (Node.js)
-- **Framework:** Express.js
-- **Middleware:** `express.json()` for parsing body data
-- **Documentation:** Swagger UI (`swagger-ui-express`)
+This repository is strictly dedicated to **Core Java**. Here, I share my structured, handwritten visual notes and technical breakdowns of advanced Java concepts, memory management, and multithreading.
 
-## 📋 Endpoints Logic
-I have implemented the following logic for the API:
+---
 
-| Method | Endpoint | Description | Expected Status |
-| :--- | :--- | :--- | :--- |
-| **GET** | `/` | Describe API name and version | `200 OK` |
-| **GET** | `/health` | Check if server is alive | `200 OK` |
-| **GET** | `/task` | Returns list of all tasks | `200 OK` |
-| **GET** | `/task/:id` | Returns a specific task by ID | `200` or `404` |
-| **POST** | `/user-task` | Creates a new task | `201 Created` |
-| **PUT** | `/modified-task/:id` | Replaces/updates a task | `200` or `404` |
-| **DELETE** | `/task/:id` | Removes a task permanently | `204 Success` |
+## 📂 Topic Index
 
-## 🏗️ Installation & Setup
+I am building this out day by day. Click on any topic to read the notes and see the visual diagrams!
 
-Follow these steps to run the project on your local machine:
+| Day | Topic | Link |
+| :---: | :--- | :--- |
+| **01** | Introduction to Multithreading  | [👉 Read Notes](./Day-01-Multithreading/README.md) |
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Sakshi13-05/BackendFoundation.git
 
-2. **Navigate to the correct folder:**
-   ```bash
-   cd BuildApi
+*(Note: I will be updating this index regularly as I upload more topics!)*
 
-3. **Install all necessary packages:**
-   ```bash
-   npm install express swagger-ui-express
+---
 
-4. **Start the API server**
-   ```bash
-   node server.js
+## 🎯 What's inside?
+* **Visual Learning:** I include photos of my handwritten diagrams to explain complex architectures (like how the JVM allocates memory to threads).
+* **System-Level Thinking:** We look at how Java interacts with the OS, CPU cores, and RAM.
+* **Interview Ready:** These notes focus on the core conceptual questions frequently asked in top-tier technical interviews.
 
-## 🧪 Testing with curl (Proof of Logic)
+## 🍃 Looking for Spring Boot?
+If you want to see my practical code implementations and mini-projects, head over to my dedicated Spring Boot repository here: 
+👉 *(https://github.com/Sakshi13-05/Spring-Basics)*
 
-To verify the endpoints, run these commands in your terminal:
+---
 
-1. **Create a task::**
-   ```bash
-   curl -i -X POST http://localhost:3000/user-task -H "Content-Type: application/json" -d "          {\"title\":\"Learn Backend Logic\"}"
+## 📌 Support & Connect
+If you find these notes helpful in your learning journey:
+1. ⭐ **Star this repository** (click the star button at the top right) so you don't lose it!
+2. ➕ **Follow me on GitHub** to get notified when "Day 2" drops.
+3. 💼 **Let's connect on LinkedIn:** *www.linkedin.com/in/sakshichavan-dev*
 
-2. **Update a task (Example task ID 2):**
-   ```bash
-   curl -i -X PUT http://localhost:3000/modified-task/2 -H "Content-Type: application/json" -d "{\"done\": true}"
-
-3. **Delete a task::**
-   ```bash
-   curl -i -X DELETE http://localhost:3000/task/1
+Happy Coding! 💻
