@@ -1,6 +1,6 @@
 # Day 1: Introduction to Multithreading & JVM Architecture 🚀
 
-Hi there! 👋 As a Software Engineer at Deloitte, I am documenting my Core Java notes. Today, we dive into what happens under the hood when a Java program executes, how the JVM allocates memory, and the true difference between concurrency and parallelism.
+Hi there! 👋 , I am documenting my Core Java notes. Today, we dive into what happens under the hood when a Java program executes, how the JVM allocates memory, and the true difference between concurrency and parallelism.
 
 ---
 
@@ -11,11 +11,14 @@ Before understanding multithreading, we must understand the lifecycle of executi
 * **Program:** A set of instructions written in a file (e.g., `A.java` compiled to `A.class` bytecode).
 * **Process:** A program that is currently being executed. A program only becomes a process when it enters the RAM from the Disk. This allocation is done by the Operating System (OS).
   * *Key Insight:* To execute a process, the OS allocates CPU time, RAM, and resources. Processes have strictly isolated memory. For example, if Process P1 and P2 both consume 2GB of RAM, P1 cannot intercept or look at the memory space given to P2.
-* **Thread:** The smallest sequence of instructions. It is a "lightweight process" that runs independently on the CPU. 
+* **Thread:** The smallest sequence of instructions. It is a "lightweight process" that runs independently on the CPU.
+  
+*Image 1*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/ec2b51c3-5049-4ebf-8a2b-8e6de1deaabd" />
 
-*(Drag and drop Image 1 here)*
 
 ---
+
 
 ## 2. What happens behind the scenes when a program becomes a process?
 
@@ -35,9 +38,10 @@ Because the JVM is platform-dependent, which makes Java *platform-independent*. 
 * **Shared Memory:** The `Heap` and `Method Area` (Mem area) are shared across the entire process.
 * **Thread-Isolated Memory:** Every single thread gets its own `Stack` and `PC`.
 
-*(Drag and drop Image 2 here)*
+*Image2*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/cf91f68c-a1f6-4d0c-93bc-d4dc15db5d35" />
 
----
+
 
 ## 3. Concurrency vs. Parallelism & Context Switching
 
@@ -55,7 +59,10 @@ If a CPU core dictates how many tasks it can do parallelly, what happens when we
 ### Real-World Scenario: 2 Cores, 5 Threads
 In modern computing, threads execute using a mix of both! Threads that want to run are executed for some time parallelly (across the two cores) AND concurrently (context switching on individual cores).
 
-*(Drag and drop Image 3 here)*
+*Image 3*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/5fa34683-a4ed-42da-9bcf-f6da6d2eafee" />
+
+
 
 ---
 
@@ -66,7 +73,10 @@ In modern computing, threads execute using a mix of both! Threads that want to r
 
 **🔥 Ultimate Takeaway:** *"For the CPU, there is no process. All are threads."*
 
-*(Drag and drop Image 4 here)*
+*Image 4*
+<img width="382" height="512" alt="download" src="https://github.com/user-attachments/assets/439dbde2-eae0-4df0-9494-009fe75870c9" />
+
+
 
 ---
 *If you found these under-the-hood insights helpful, please hit the ⭐ button on this repository and follow me for Day 2!*
