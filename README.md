@@ -28,7 +28,7 @@ I am building this out day by day. Click on any topic to read the notes and see 
 
 ## 🍃 Looking for Spring Boot?
 If you want to see my practical code implementations and mini-projects, head over to my dedicated Spring Boot repository here: 
-👉 *(Insert link to your Spring Boot repository here)*
+👉 *(https://github.com/Sakshi13-05/Spring-Basics)*
 
 ---
 
