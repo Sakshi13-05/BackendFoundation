@@ -1,47 +1,42 @@
-# 🚀 Backend Foundation: Core Java & Spring Boot
+# ☕ Backend Foundation: Core Java Internals
 
-Hi there! 👋 . I believe that mastering backend development requires more than just knowing how to write code—it requires understanding what happens **under the hood**.
+Hi there! 👋 
 
-I created this repository to share my structured, handwritten visual notes and technical breakdowns.
+Welcome to my **Backend Foundation** repository! I believe that mastering backend development requires more than just knowing how to write code—it requires understanding exactly what happens **under the hood**. 
+
+This repository is strictly dedicated to **Core Java**. Here, I share my structured, handwritten visual notes and technical breakdowns of advanced Java concepts, memory management, and multithreading.
 
 ---
 
-## 📂 Repository Index
+## 📂 Topic Index
 
-This repository is divided into two main sections. Click on any topic to read the notes!
-
-### ☕ Section 1: Core Java (Under the Hood)
-Deep dives into Java internals, memory management, and advanced concepts.
+I am building this out day by day. Click on any topic to read the notes and see the visual diagrams!
 
 | Day | Topic | Link |
 | :---: | :--- | :--- |
-| **01** | Introduction to Multithreading | [👉 Read Notes](./Day-01-Multithreading-Intro/README.md) |
+| **01** | Introduction to Multithreading  | [👉 Read Notes](./Day-01-Multithreading/README.md) |
 | **02** | *(Coming Soon)* | *(Coming Soon)* |
+| **03** | *(Coming Soon)* | *(Coming Soon)* |
+
+*(Note: I will be updating this index regularly as I upload more topics!)*
 
 ---
 
-### 🍃 Section 2: Spring Boot Basics
-Step-by-step documentation on building robust backend applications with Spring Boot.
+## 🎯 What's inside?
+* **Visual Learning:** I include photos of my handwritten diagrams to explain complex architectures (like how the JVM allocates memory to threads).
+* **System-Level Thinking:** We look at how Java interacts with the OS, CPU cores, and RAM.
+* **Interview Ready:** These notes focus on the core conceptual questions frequently asked in top-tier technical interviews.
 
-| Topic # | Topic Name | Link |
-| :---: | :--- | :--- |
-| **01** | Understanding IOC | *(Add your folder link here)* |
-| **02** | Understanding Dependency Injection | *(Add your folder link here)* |
-
-
-*(Note: I will be updating this index regularly as I upload more notes!)*
+## 🍃 Looking for Spring Boot?
+If you want to see my practical code implementations and mini-projects, head over to my dedicated Spring Boot repository here: 
+👉 *(Insert link to your Spring Boot repository here)*
 
 ---
-
-## 🎯 Why follow this repository?
-* **Visual Learning:** I include my own handwritten diagrams to explain complex architectures (like JVM memory).
-* **Bite-Sized:** Topics are broken down into daily/topic-wise chunks so it is not overwhelming.
-* **Industry Standard:** Notes are focused on the core concepts actually used in enterprise-level applications.
 
 ## 📌 Support & Connect
 If you find these notes helpful in your learning journey:
 1. ⭐ **Star this repository** (click the star button at the top right) so you don't lose it!
-2. ➕ **Follow me on GitHub** to get notified when I drop the next topic.
-3. 💼 **Let's connect on LinkedIn** *www.linkedin.com/in/sakshichavan-dev*
+2. ➕ **Follow me on GitHub** to get notified when "Day 2" drops.
+3. 💼 **Let's connect on LinkedIn:** *www.linkedin.com/in/sakshichavan-dev*
 
 Happy Coding! 💻
