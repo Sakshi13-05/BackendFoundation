@@ -1,61 +1,47 @@
-# 🚀 Build your first CRUD API - To-Do List
+# 🚀 Backend Foundation: Core Java & Spring Boot
 
-This is my first professional Backend CRUD API built during the FlyRank Backend Foundation program. I built this to master the request-response loop and handle data operations logic manually.
+Hi there! 👋 . I believe that mastering backend development requires more than just knowing how to write code—it requires understanding what happens **under the hood**.
 
-## 📌 Project Overview
-This project manages a to-do list in-memory. It demonstrates the ability to Create, Read, Update, and Delete tasks while following strictly defined API specifications.
+I created this repository to share my structured, handwritten visual notes and technical breakdowns.
 
-## 🛠️ Tech Stack
-- **Language:** JavaScript (Node.js)
-- **Framework:** Express.js
-- **Middleware:** `express.json()` for parsing body data
-- **Documentation:** Swagger UI (`swagger-ui-express`)
+---
 
-## 📋 Endpoints Logic
-I have implemented the following logic for the API:
+## 📂 Repository Index
 
-| Method | Endpoint | Description | Expected Status |
-| :--- | :--- | :--- | :--- |
-| **GET** | `/` | Describe API name and version | `200 OK` |
-| **GET** | `/health` | Check if server is alive | `200 OK` |
-| **GET** | `/task` | Returns list of all tasks | `200 OK` |
-| **GET** | `/task/:id` | Returns a specific task by ID | `200` or `404` |
-| **POST** | `/user-task` | Creates a new task | `201 Created` |
-| **PUT** | `/modified-task/:id` | Replaces/updates a task | `200` or `404` |
-| **DELETE** | `/task/:id` | Removes a task permanently | `204 Success` |
+This repository is divided into two main sections. Click on any topic to read the notes!
 
-## 🏗️ Installation & Setup
+### ☕ Section 1: Core Java (Under the Hood)
+Deep dives into Java internals, memory management, and advanced concepts.
 
-Follow these steps to run the project on your local machine:
+| Day | Topic | Link |
+| :---: | :--- | :--- |
+| **01** | Introduction to Multithreading | [👉 Read Notes](./Day-01-Multithreading-Intro/README.md) |
+| **02** | *(Coming Soon)* | *(Coming Soon)* |
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Sakshi13-05/BackendFoundation.git
+---
 
-2. **Navigate to the correct folder:**
-   ```bash
-   cd BuildApi
+### 🍃 Section 2: Spring Boot Basics
+Step-by-step documentation on building robust backend applications with Spring Boot.
 
-3. **Install all necessary packages:**
-   ```bash
-   npm install express swagger-ui-express
+| Topic # | Topic Name | Link |
+| :---: | :--- | :--- |
+| **01** | Understanding IOC | *(Add your folder link here)* |
+| **02** | Understanding Dependency Injection | *(Add your folder link here)* |
 
-4. **Start the API server**
-   ```bash
-   node server.js
 
-## 🧪 Testing with curl (Proof of Logic)
+*(Note: I will be updating this index regularly as I upload more notes!)*
 
-To verify the endpoints, run these commands in your terminal:
+---
 
-1. **Create a task::**
-   ```bash
-   curl -i -X POST http://localhost:3000/user-task -H "Content-Type: application/json" -d "          {\"title\":\"Learn Backend Logic\"}"
+## 🎯 Why follow this repository?
+* **Visual Learning:** I include my own handwritten diagrams to explain complex architectures (like JVM memory).
+* **Bite-Sized:** Topics are broken down into daily/topic-wise chunks so it is not overwhelming.
+* **Industry Standard:** Notes are focused on the core concepts actually used in enterprise-level applications.
 
-2. **Update a task (Example task ID 2):**
-   ```bash
-   curl -i -X PUT http://localhost:3000/modified-task/2 -H "Content-Type: application/json" -d "{\"done\": true}"
+## 📌 Support & Connect
+If you find these notes helpful in your learning journey:
+1. ⭐ **Star this repository** (click the star button at the top right) so you don't lose it!
+2. ➕ **Follow me on GitHub** to get notified when I drop the next topic.
+3. 💼 **Let's connect on LinkedIn** *www.linkedin.com/in/sakshichavan-dev*
 
-3. **Delete a task::**
-   ```bash
-   curl -i -X DELETE http://localhost:3000/task/1
+Happy Coding! 💻
