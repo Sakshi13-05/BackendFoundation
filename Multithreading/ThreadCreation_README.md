@@ -67,4 +67,12 @@ A thread goes through multiple distinct stages during its lifespan:
 
 
 ---
+## 5. Files to refer
+
+1. **CreateUsingRunnable.java**
+2. **CreateUsingThread.java**
+3. **DemoNonDeterminism.java**
+4. **ThreadLifecycle.java**
+
+---
 *If you found this helpful, please hit the ⭐ button on this repository and follow me for Day 3!*
