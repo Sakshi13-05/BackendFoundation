@@ -28,7 +28,12 @@ Welcome to Day 3! Today we look at the essential methods used to control thread 
 * The OS scheduler can completely ignore this request! The thread stays in the **RUNNABLE** state (it does not block).
 > 💻 **Code Reference:** Check out `MethodYeild.java`
 
-*(Drag and drop your sleep/join/yield diagram here)*
+*Image1*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/2ef7d60a-7752-4c7f-9b6a-fd4a24bf676f" />
+
+*Image2*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/97552503-13b3-40e5-9727-9e78847d6097" />
+
 
 ---
 
@@ -44,7 +49,10 @@ This is a very common interview question:
 * `isInterrupted()`: An instance method that simply returns true/false without changing the flag.
 > 💻 **Code Reference:** Check out `MethodInterrupt.java` to see how interruption flags behave.
 
-*(Drag and drop your interrupt notes here)*
+*Image3*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/d8e76555-b844-42b3-b585-13af5ca072e8" />
+
+
 
 ---
 
@@ -56,6 +64,7 @@ Java threads have priorities ranging from 1 to 10.
 * Note: Setting priority is just an indication. The ultimate decision still lies with the OS CPU Scheduler.
 > 💻 **Code Reference:** Check out `MethodPriority.java`
 
+
 ---
 
 ## 4. Daemon Threads (Background Threads)
@@ -66,7 +75,9 @@ Java divides threads into two categories: **User Threads** and **Daemon (Backgro
 * **Example:** The Java **Garbage Collector** is the most famous Daemon thread!
 > 💻 **Code Reference:** Check out `MethodDaemon.java` to see how background threads terminate.
 
-*(Drag and drop your Priority/Daemon Thread notes here)*
+*Image4*
+<img width="896" height="1200" alt="download" src="https://github.com/user-attachments/assets/b83d4d05-2d49-40fe-b8a4-bc74c238b83f" />
+
 
 ---
 *If you found this helpful, please hit the ⭐ button on this repository and follow me for Day 4!*

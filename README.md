@@ -16,6 +16,8 @@ I am building this out day by day. Click on any topic to read the notes and see 
 | :---: | :--- | :--- |
 | **01** | Introduction to Multithreading  | [👉 Read Notes](https://github.com/Sakshi13-05/BackendFoundation/tree/main/Multithreading) |
 | **02** | Thread Creation and Lifecycle  | [👉 Read Notes](https://github.com/Sakshi13-05/BackendFoundation/blob/main/Multithreading/ThreadCreation_README.md) |
+| **03** | Thread Methods    | [👉 Read Notes](https://github.com/Sakshi13-05/BackendFoundation/blob/main/Multithreading/ThreadMethods_README.md) |
+
 
 
 
